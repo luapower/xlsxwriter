@@ -1,5 +1,5 @@
 
-## `local xlsxwriter = require'xlsxwriter'
+## `local xlsxwriter = require'xlsxwriter'`
 
 Xlsxwriter is a Lua  module that can be used to write text, numbers, formulas
 and hyperlinks to multiple worksheets in an Excel 2007+ XLSX file. It supports
