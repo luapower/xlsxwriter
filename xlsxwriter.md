@@ -1,3 +1,8 @@
+---
+tagline: Excel XLSX file generator
+author: John McNamara
+license: MIT
+---
 
 ## `local xlsxwriter = require'xlsxwriter'`
 
