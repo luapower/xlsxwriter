@@ -17,16 +17,12 @@ local SharedStrings = {}
 setmetatable(SharedStrings,{__index = Xmlwriter})
 
 function SharedStrings:new()
-  local instance = {
+  return Xmlwriter.new(self, {
     string_table = {},
     string_array = {},
     string_count = 0,
     unique_count = 0,
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 

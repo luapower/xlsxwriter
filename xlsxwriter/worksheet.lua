@@ -28,7 +28,7 @@ local Worksheet = {}
 setmetatable(Worksheet,{__index = Xmlwriter})
 
 function Worksheet:new()
-  local instance = {
+  return Xmlwriter.new(self, {
     optimization           = false,
     data_table             = {},
 
@@ -141,11 +141,7 @@ function Worksheet:new()
     rstring                = "",
     previous_row           = 0,
     hyperlinks             = {},
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 ----

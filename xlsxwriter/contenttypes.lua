@@ -20,8 +20,7 @@ local Contenttypes = {}
 setmetatable(Contenttypes,{__index = Xmlwriter})
 
 function Contenttypes:new()
-
-  local instance = {
+  return Xmlwriter.new(self, {
     defaults  = {{"rels", app_package .. "relationships+xml" },
                  {"xml", "application/xml"}},
     overrides = {
@@ -30,11 +29,7 @@ function Contenttypes:new()
       {"/xl/styles.xml",       app_document .. "spreadsheetml.styles+xml"},
       {"/xl/theme/theme1.xml", app_document .. "theme+xml"},
       {"/xl/workbook.xml",     app_document .. "spreadsheetml.sheet.main+xml"}}
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 

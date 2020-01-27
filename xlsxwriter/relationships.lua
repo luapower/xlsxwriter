@@ -21,14 +21,10 @@ local Rels = {}
 setmetatable(Rels,{__index = Xmlwriter})
 
 function Rels:new()
-  local instance = {
+  return Xmlwriter.new(self, {
     rels = {},
     id   = 1,
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 ------------------------------------------------------------------------------

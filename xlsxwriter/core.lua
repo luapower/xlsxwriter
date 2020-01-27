@@ -17,15 +17,10 @@ local Core = {}
 setmetatable(Core,{__index = Xmlwriter})
 
 function Core:new()
-  local instance = {
-
+  return Xmlwriter.new(self, {
     properties = {},
     localtime  = os.date("%Y-%m-%dT%H:%M:%SZ")
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 

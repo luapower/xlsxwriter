@@ -13,12 +13,12 @@ function Xmlwriter:new (instance)
   instance = instance or {}
   setmetatable(instance, self)
   self.__index = self
-  self.chunks = {}
+  instance._chunks = {}
   return instance
 end
 
-function Xmlwriter:write(s)
-  table.insert(self.chunks, s)
+function Xmlwriter:_write(s)
+  table.insert(self._chunks, s)
 end
 
 ----
@@ -28,22 +28,20 @@ function Xmlwriter:_set_filename(filename)
   self.filename = filename
 end
 
-function Xmlwriter:_xml_close()
-  self.chunks = nil
-end
+function Xmlwriter:_xml_close() end --stub
 
 ----
 -- Return all of the data in the current filehandle.
 --
 function Xmlwriter:_get_data()
-  return table.concat(self.chunks)
+  return table.concat(self._chunks)
 end
 
 ----
 -- Write the XML declaration.
 --
 function Xmlwriter:_xml_declaration()
-  self:write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n')
+  self:_write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n')
 end
 
 ----
@@ -52,7 +50,7 @@ end
 function Xmlwriter:_xml_start_tag(tag, attributes)
   local attr = self._format_attributes(attributes)
 
-  self:write(string.format('<%s%s>', tag, attr))
+  self:_write(string.format('<%s%s>', tag, attr))
 end
 
 ----
@@ -61,14 +59,14 @@ end
 function Xmlwriter:_xml_start_tag_unencoded(tag, attributes)
   local attr = self._format_attributes_unencoded(attributes)
 
-  self:write(string.format('<%s%s>', tag, attr))
+  self:_write(string.format('<%s%s>', tag, attr))
 end
 
 ----
 -- Write an XML end tag.
 --
 function Xmlwriter:_xml_end_tag(tag)
-  self:write(string.format('</%s>', tag))
+  self:_write(string.format('</%s>', tag))
 end
 
 ----
@@ -77,7 +75,7 @@ end
 function Xmlwriter:_xml_empty_tag(tag, attributes)
   local attr = self._format_attributes(attributes)
 
-  self:write(string.format('<%s%s/>', tag, attr))
+  self:_write(string.format('<%s%s/>', tag, attr))
 end
 
 ----
@@ -86,7 +84,7 @@ end
 function Xmlwriter:_xml_empty_tag_unencoded(tag, attributes)
   local attr = self._format_attributes_unencoded(attributes)
 
-  self:write(string.format('<%s%s/>', tag, attr))
+  self:_write(string.format('<%s%s/>', tag, attr))
 end
 
 ----
@@ -97,7 +95,7 @@ function Xmlwriter:_xml_data_element(tag, data, attributes)
 
   data = self._escape_data(data)
 
-  self:write(string.format('<%s%s>%s</%s>', tag, attr, data, tag))
+  self:_write(string.format('<%s%s>%s</%s>', tag, attr, data, tag))
 end
 
 ----
@@ -106,7 +104,7 @@ end
 function Xmlwriter:_xml_string_element(index, attributes)
   local attr = self._format_attributes(attributes)
 
-  self:write(string.format('<c%s t="s"><v>%d</v></c>', attr, index))
+  self:_write(string.format('<c%s t="s"><v>%d</v></c>', attr, index))
 end
 
 ----
@@ -116,14 +114,14 @@ function Xmlwriter:_xml_si_element(str, attributes)
   local attr = self._format_attributes(attributes)
   str = self._escape_data(str)
 
-  self:write(string.format('<si><t%s>%s</t></si>', attr, str))
+  self:_write(string.format('<si><t%s>%s</t></si>', attr, str))
 end
 
 ----
 -- Optimised tag writer for shared strings <si> rich string elements.
 --
 function Xmlwriter:_xml_rich_si_element(str)
-  self:write(string.format('<si>%s</si>', str))
+  self:_write(string.format('<si>%s</si>', str))
 end
 
 ----
@@ -132,7 +130,7 @@ end
 function Xmlwriter:_xml_number_element(number, attributes)
   local attr = self._format_attributes(attributes)
 
-  self:write(string.format('<c%s><v>%.15g</v></c>', attr, number))
+  self:_write(string.format('<c%s><v>%.15g</v></c>', attr, number))
 end
 
 ----
@@ -144,7 +142,7 @@ function Xmlwriter:_xml_formula_element(formula, result, attributes)
   formula = self._escape_data(formula)
   result  = self._escape_data(result)
 
-  self:write(string.format('<c%s><f>%s</f><v>%s</v></c>',
+  self:_write(string.format('<c%s><f>%s</f><v>%s</v></c>',
                               attr, formula, result))
 end
 
@@ -161,7 +159,7 @@ function Xmlwriter:_xml_inline_string(str, preserve, attributes)
 
   str = self._escape_data(str)
 
-  self:write(string.format('<c%s t="inlineStr"><is><t%s>%s</t></is></c>',
+  self:_write(string.format('<c%s t="inlineStr"><is><t%s>%s</t></is></c>',
                               attr, t_attr, str))
 end
 
@@ -173,7 +171,7 @@ function Xmlwriter:_xml_rich_inline_string(str, attributes)
 
   str = self._escape_data(str)
 
-  self:write(string.format('<c%s t="inlineStr"><is>%s</is></c>', attr, str))
+  self:_write(string.format('<c%s t="inlineStr"><is>%s</is></c>', attr, str))
 end
 
 ----

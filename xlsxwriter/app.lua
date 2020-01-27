@@ -17,16 +17,11 @@ local App = {}
 setmetatable(App,{__index = Xmlwriter})
 
 function App:new()
-  local instance = {
-
+  return Xmlwriter.new(self, {
     part_names    = {},
     heading_pairs = {},
     properties    = {},
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 ------------------------------------------------------------------------------

@@ -17,7 +17,7 @@ local Styles = {}
 setmetatable(Styles,{__index = Xmlwriter})
 
 function Styles:new()
-  local instance = {
+  return Xmlwriter.new(self, {
     font_count       = 0,
     num_format_count = 0,
     border_count     = 0,
@@ -26,11 +26,7 @@ function Styles:new()
     custom_colors    = {},
     xf_formats       = {},
     dxf_formats      = {},
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
-  return instance
+  })
 end
 
 

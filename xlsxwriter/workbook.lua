@@ -26,7 +26,7 @@ function Workbook:new(filename, options)
   assert(filename, "Filename required by Workbook:new()")
   options = options or {}
 
-  local instance = {
+  local instance = Xmlwriter.new(self, {
 
     worksheet_meta      = {activesheet = 0, firstsheet = 0},
     filename            = filename,
@@ -77,10 +77,7 @@ function Workbook:new(filename, options)
     drawing_count      = 0,
     calc_mode          = "auto",
     calc_on_load       = true,
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
+  })
 
   -- Add the default cell format.
   instance.formats[1] = Workbook.add_format(instance, {xf_index = 0})

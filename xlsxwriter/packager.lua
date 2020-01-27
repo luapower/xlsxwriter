@@ -151,9 +151,7 @@ end
 -- Add the components to the zip file.
 --
 function Packager:_add_to_zip(writer)
-
   writer:_assemble_xml_file()
-
   self.zip:archive(writer.filename, writer:_get_data())
 end
 

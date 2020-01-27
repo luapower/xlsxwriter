@@ -19,7 +19,7 @@ setmetatable(Format,{__index = Xmlwriter})
 
 function Format:new(properties, xf_indices, dxf_indices)
 
-  local instance = {
+  local instance = Xmlwriter.new(self, {
     xf_format_indices  = xf_indices,
     dxf_format_indices = dxf_indices,
     xf_index           = nil,
@@ -83,10 +83,7 @@ function Format:new(properties, xf_indices, dxf_indices)
     just_distrib       = false,
     color_indexed      = false,
     font_only          = false,
-  }
-
-  setmetatable(instance, self)
-  self.__index = self
+  })
 
   -- Set any property initialisers.
   if type(properties) == 'table' then
