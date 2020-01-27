@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Working with Colors {#colors}
 ===================
 

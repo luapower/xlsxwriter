@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Working with Dates and Time {#working_with_dates_and_time}
 ===========================
 

@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Working with Cell Notation {#cell_notation}
 ==========================
 

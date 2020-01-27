@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Tutorial 3: Writing different types of data to the XLSX File {#tutorial3}
 ============================================================
 

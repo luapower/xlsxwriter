@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Working with Memory and Performance {#memory_perf}
 ===================================
 

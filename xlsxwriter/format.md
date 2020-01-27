@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 The Format Class {#format}
 ================
 

@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Working with Formats {#working_with_formats}
 ====================
 

@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 The Workbook Class {#workbook}
 ==================
 

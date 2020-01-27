@@ -1,9 +1,9 @@
-### Q. Can XlsxWriter use an existing Excel file as a template?
+### Can XlsxWriter use an existing Excel file as a template?
 
 No. Xlsxwriter is designed only as a file *writer*. It cannot read or modify
 an existing Excel file.
 
-### Q. Why do my formulas show a zero result in some, non-Excel applications?
+### Why do my formulas show a zero result in some, non-Excel applications?
 
 Due to wide range of possible formulas and interdependencies between
 them `xlsxwriter` doesn\'t, and realistically cannot, calculate the
@@ -23,18 +23,17 @@ formula using the optional `value` parameter in
 
     worksheet:write_formula('A1', '=2+2', num_format, 4)
 
-### Q. Can I apply a format to a range of cells in one go?
+### Can I apply a format to a range of cells in one go?
 
 Currently no. However, it is a planned features to allow cell formats
 and data to be written separately.
 
-### Q. Is feature X supported or will it be supported?
+### Is feature X supported or will it be supported?
 
 All supported features are documented. In time the feature set should
-expand to be the same as the [Python
-XlsxWriter](http://xlsxwriter.readthedocs.org) module.
+expand to be the same as the [Python XlsxWriter](http://xlsxwriter.readthedocs.org) module.
 
-### Q. Is there an \"AutoFit\" option for columns?
+### Is there an \"AutoFit\" option for columns?
 
 Unfortunately, there is no way to specify \"AutoFit\" for a column in
 the Excel file format. This feature is only available at runtime from

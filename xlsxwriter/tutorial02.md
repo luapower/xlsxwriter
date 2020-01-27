@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 Tutorial 2: Adding formatting to the XLSX File {#tutorial2}
 ==============================================
 

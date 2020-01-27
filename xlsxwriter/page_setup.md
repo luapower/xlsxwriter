@@ -1,7 +1,3 @@
-::: {.highlight}
-lua
-:::
-
 The Worksheet Class (Page Setup) {#page_setup}
 ================================
 
