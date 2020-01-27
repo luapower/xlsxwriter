@@ -40,7 +40,7 @@
 -- Copyright 2014-2015, John McNamara, jmcnamara@cpan.org
 --
 
-local zip           = require "minizip"
+local minizip       = require "minizip"
 local App           = require "xlsxwriter.app"
 local Core          = require "xlsxwriter.core"
 local ContentTypes  = require "xlsxwriter.contenttypes"
@@ -67,12 +67,6 @@ function Packager:new(filename)
     drawing_count    = 0,
     table_count      = 0,
     named_ranges     = {},
-    file_descriptor  = {
-      istext   = true,
-      isfile   = true,
-      isdir    = false,
-      exattrib = 0x81800020,
-      platform = 'unix'},
   }
 
   setmetatable(instance, self)
@@ -115,7 +109,7 @@ end
 --
 function Packager:_create_package()
 
-  self.zip = zip.open(self.filename, 'w')
+  self.zip = minizip.open(self.filename, 'w')
 
   self:_write_worksheet_files()
   self:_write_chartsheet_files()
@@ -151,8 +145,15 @@ end
 -- Add the components to the zip file.
 --
 function Packager:_add_to_zip(writer)
+
+  writer:_set_filehandle(io.tmpfile())
   writer:_assemble_xml_file()
-  self.zip:archive(writer.filename, writer:_get_data())
+
+  self.zip:add_file(writer.filename)
+  for s in writer:_get_xml_reader() do
+    self.zip:write(s)
+  end
+  self.zip:close_file()
 end
 
 ----

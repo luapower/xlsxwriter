@@ -1,19 +1,37 @@
 
 ## `local xlsxwriter = require'xlsxwriter'`
 
-Xlsxwriter is a Lua  module that can be used to write text, numbers, formulas
-and hyperlinks to multiple worksheets in an Excel 2007+ XLSX file. It supports
-features such as:
+Xlsxwriter is a Lua module that can be used to write text, numbers, formulas
+and hyperlinks to multiple worksheets in an Excel 2007+ XLSX file.
 
-* 100% compatible Excel XLSX files.
+### Features
+
+* High degree of fidelity with files produced by Excel.
+* Can write very large files with semi-constant memory.
 * Full formatting.
-* Memory optimisation mode for writing large files.
 * Merged cells.
 * Worksheet setup methods.
 * Defined names.
 * Document properties.
 
+### Limitations
+
+ * It can only create **new files**. It cannot read or modify existing files.
+
+## Status
+
+Xlsxwriter was written by John McNamara and published
+[here](https://github.com/jmcnamara/xlsxwriter.lua]). The module is no
+longer maintained by the original author. This fork is maintained by
+Cosmin Apreutesei.
+
+Xlsxwriter is a Lua port of the Perl
+[Excel::Writer::XLSX](http://search.cpan.org/~jmcnamara/Excel-Writer-XLSX/)
+and the Python [XlsxWriter](http://xlsxwriter.readthedocs.org) modules.
+
 ## Example
+
+![image](xlsxwriter/_images/demo.png)
 
 ```lua
 local Workbook = require "xlsxwriter.workbook"
@@ -40,5 +58,3 @@ worksheet:write(3, 0, 123.456)
 workbook:close()
 
 ```
-
-See the full documentation at: http://xlsxwriterlua.readthedocs.org
