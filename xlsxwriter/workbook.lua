@@ -3,7 +3,6 @@
 --
 -- Copyright 2014-2015, John McNamara, jmcnamara@cpan.org
 --
-require "xlsxwriter.strict"
 
 local Xmlwriter     = require "xlsxwriter.xmlwriter"
 local Worksheet     = require "xlsxwriter.worksheet"

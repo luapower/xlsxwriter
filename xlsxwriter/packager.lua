@@ -39,7 +39,6 @@
 --
 -- Copyright 2014-2015, John McNamara, jmcnamara@cpan.org
 --
-require "xlsxwriter.strict"
 
 local zip           = require "minizip"
 local App           = require "xlsxwriter.app"
@@ -153,7 +152,6 @@ end
 --
 function Packager:_add_to_zip(writer)
 
-  writer:_set_filehandle(io.tmpfile())
   writer:_assemble_xml_file()
 
   self.zip:archive(writer.filename, writer:_get_data())
