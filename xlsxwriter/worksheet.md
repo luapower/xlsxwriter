@@ -20,7 +20,7 @@ object:
 
     worksheet1:write("A1", 123)
 
-![image](/files/luapower/xlsxwriter/_images/worksheet00.png)
+![](/files/luapower/xlsxwriter/_images/worksheet00.png)
 
 worksheet:write()
 -----------------
@@ -83,7 +83,7 @@ Here are some examples:
 
 This creates a worksheet like the following:
 
-![image](/files/luapower/xlsxwriter/_images/worksheet01.png)
+![](/files/luapower/xlsxwriter/_images/worksheet01.png)
 
 The `write()` method supports two forms of notation to designate the
 position of cells: **Row-column** notation and **A1** notation:
@@ -147,7 +147,7 @@ handle the UTF-8 strings like any other strings:
 
     worksheet:write("A1", "Some UTF-8 text")
 
-![image](/files/luapower/xlsxwriter/_images/worksheet02.png)
+![](/files/luapower/xlsxwriter/_images/worksheet02.png)
 
 There are some sample UTF-8 sample programs in the `examples` directory
 of the `xlsxwriter` repository.
@@ -929,7 +929,7 @@ visible in a multi-sheet workbook:
 
     worksheet3:activate()
 
-![image](/files/luapower/xlsxwriter/_images/worksheet_activate.png)
+![](/files/luapower/xlsxwriter/_images/worksheet_activate.png)
 
 More than one worksheet can be selected via the `select()` method, see
 below, however only one worksheet can be active.
@@ -973,7 +973,7 @@ The `hide()` method is used to hide a worksheet:
 You may wish to hide a worksheet in order to avoid confusing a user with
 intermediate data or calculations.
 
-![image](/files/luapower/xlsxwriter/_images/hide_sheet.png)
+![](/files/luapower/xlsxwriter/_images/hide_sheet.png)
 
 A hidden worksheet can not be activated or selected so this method is
 mutually exclusive with the `activate()`{.interpreted-text role="func"}
@@ -1067,7 +1067,7 @@ It is possible to apply other formatting to the merged cells as well:
 
     worksheet:merge_range("B3:D4", "Merged Cells", merge_format)
 
-![image](/files/luapower/xlsxwriter/_images/merge_range.png)
+![](/files/luapower/xlsxwriter/_images/merge_range.png)
 
 See `ex_merge1`{.interpreted-text role="ref"} for more details.
 

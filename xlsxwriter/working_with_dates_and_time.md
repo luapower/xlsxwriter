@@ -53,7 +53,7 @@ worksheet:write("A7", number, format7) --> Feb 28 2008 12:00 PM
 workbook:close()
 ```
 
-![image](xlsxwriter/_images/working_with_dates_and_times01.png)
+![](xlsxwriter/_images/working_with_dates_and_times01.png)
 
 To make working with dates and times a little easier the `xlsxwriter`
 module provides two date handling methods:
@@ -167,4 +167,4 @@ end
 workbook:close()
 ```
 
-![image](/files/luapower/xlsxwriter/_images/working_with_dates_and_times02.png)
+![](/files/luapower/xlsxwriter/_images/working_with_dates_and_times02.png)

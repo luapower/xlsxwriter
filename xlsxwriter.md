@@ -31,7 +31,7 @@ and the Python [XlsxWriter](http://xlsxwriter.readthedocs.org) modules.
 
 ## Example
 
-![image](/files/luapower/xlsxwriter/_images/demo.png)
+![](/files/luapower/xlsxwriter/_images/demo.png)
 
 ```lua
 local Workbook = require "xlsxwriter.workbook"
