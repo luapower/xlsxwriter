@@ -68,3 +68,4 @@ the images may looked stretched or squashed.
 
 This is not specifically an `xlsxwriter` issue. It also occurs with
 files created in Excel 2007 and Excel 2010.
+
