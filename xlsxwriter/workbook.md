@@ -45,7 +45,7 @@ with a given filename:
 
     workbook:close()
 
-![image](xlsxwriter/_images/workbook01.png)
+![image](/files/luapower/xlsxwriter/_images/workbook01.png)
 
 The constructor options are:
 
@@ -95,7 +95,7 @@ default Excel convention will be followed, i.e. Sheet1, Sheet2, etc.:
     worksheet3 = workbook:add_worksheet("Data")    -- Data
     worksheet4 = workbook:add_worksheet()          -- Sheet4
 
-![image](xlsxwriter/_images/workbook02.png)
+![image](/files/luapower/xlsxwriter/_images/workbook02.png)
 
 The worksheet name must be a valid Excel worksheet name, i.e. it cannot
 contain any of the characters `[ ] : * ? / \` and it must be less than
@@ -192,7 +192,7 @@ follows:
         keywords = 'Sample, Example, Properties',
         comments = 'Created with Lua and the xlsxwriter module'})
 
-![image](xlsxwriter/_images/doc_properties.png)
+![image](/files/luapower/xlsxwriter/_images/doc_properties.png)
 
 See also `ex_doc_properties`{.interpreted-text role="ref"}.
 
@@ -220,7 +220,7 @@ names can then be used in formulas:
     workbook:define_name("Exchange_rate", "=0.96")
     worksheet:write("B3", "=Exchange_rate")
 
-![image](xlsxwriter/_images/defined_name.png)
+![image](/files/luapower/xlsxwriter/_images/defined_name.png)
 
 As in Excel a name defined like this is \"global\" to the workbook and
 can be referred to from any worksheet:

@@ -19,7 +19,7 @@ This time let\'s extend the data we want to write to include some dates:
 
 The corresponding spreadsheet will look like this:
 
-![image](xlsxwriter/_images/tutorial03.png)
+![image](/files/luapower/xlsxwriter/_images/tutorial03.png)
 
 The differences here are that we have added a Date column with
 formatting and made that column a little wider to accommodate the dates.

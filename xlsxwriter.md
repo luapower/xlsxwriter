@@ -21,7 +21,7 @@ and hyperlinks to multiple worksheets in an Excel 2007+ XLSX file.
 ## Status
 
 Xlsxwriter was written by John McNamara and published
-[here](https://github.com/jmcnamara/xlsxwriter.lua]). The module is no
+[here](https://github.com/jmcnamara/xlsxwriter.lua). The module is no
 longer maintained by the original author. This fork is maintained by
 Cosmin Apreutesei.
 
@@ -31,7 +31,7 @@ and the Python [XlsxWriter](http://xlsxwriter.readthedocs.org) modules.
 
 ## Example
 
-![image](xlsxwriter/_images/demo.png)
+![image](/files/luapower/xlsxwriter/_images/demo.png)
 
 ```lua
 local Workbook = require "xlsxwriter.workbook"

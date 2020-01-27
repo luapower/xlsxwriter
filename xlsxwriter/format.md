@@ -32,7 +32,7 @@ The documentation below shows the property methods but the information
 is equally applicable when using them in the
 `add_format()`{.interpreted-text role="func"} constructor.
 
-![image](xlsxwriter/_images/formats_intro.png)
+![image](/files/luapower/xlsxwriter/_images/formats_intro.png)
 
 format:set\_font\_name()
 ------------------------
@@ -248,7 +248,7 @@ Excel:
     format11:set_num_format("00000")
     worksheet:write(13, 0, 1209, format11)
 
-![image](_images/formats_num_str.png)
+![image](/files/luapower/xlsxwriter/_images/formats_num_str.png)
 
 The number system used for dates is described in
 `working_with_dates_and_time`{.interpreted-text role="ref"}.
@@ -580,7 +580,7 @@ should be an integer, is taken as the level of indentation:
     worksheet:write("A1", "This text is indented 1 level",  format1)
     worksheet:write("A2", "This text is indented 2 levels", format2)
 
-![image](_images/text_indent.png)
+![image](/files/luapower/xlsxwriter/_images/text_indent.png)
 
 Indentation is a horizontal alignment property. It will override any
 other horizontal properties but it can be used in conjunction with
@@ -656,7 +656,7 @@ Here is an example of how to set up a solid fill in a cell:
 
     worksheet:write("A1", "Ray", format)
 
-![image](_images/formats_set_bg_color.png)
+![image](/files/luapower/xlsxwriter/_images/formats_set_bg_color.png)
 
 The color can be a Html style `#RRGGBB` string or a limited number of
 named colors, see `colors`{.interpreted-text role="ref"}.

@@ -57,7 +57,7 @@ workbook:close()
 
 If we run this program we should get a spreadsheet that looks like this:
 
-![image](xlsxwriter/_images/tutorial01.png)
+![image](/files/luapower/xlsxwriter/_images/tutorial01.png)
 
 This is a simple example but the steps involved are representative of
 all programs that use xlsxwriter, so let\'s break it down into separate
